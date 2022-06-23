@@ -32,7 +32,7 @@ public class CarLabel extends JLabel {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 		
 		//draw the car
-		car.draw(g);
+		car.draw(g2d);
 		
 		repaint();
 		
