@@ -1,6 +1,5 @@
 package de.juliuswendland.selfdrivingcar;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
@@ -42,7 +41,7 @@ public class Car {
 			public void run() {
 				move();
 			}
-		}, 0, 30);
+		}, 0, 15);
 		
 	}
 	
@@ -57,10 +56,22 @@ public class Car {
 		}
 		
 		//set the angle according to inputs
-		if(this.left)
-			this.angle += 1;
-		if(this.right)
-			this.angle -= 1;
+		if(this.speed > 0) {
+			if(this.left)
+				this.angle += 1;
+			if(this.right)
+				this.angle -= 1;
+		} else if(this.speed < 0) {
+			if(this.left)
+				this.angle -= 1;
+			if(this.right)
+				this.angle += 1;
+		}
+		
+//		if(this.left)
+//			this.angle += 1;
+//		if(this.right)
+//			this.angle -= 1;
 		
 		//implement a maximum speed
 		if(this.speed > Car.MAXIMUM_SPEED) 
@@ -78,8 +89,8 @@ public class Car {
 			this.speed = 0;
 		
 		//move the car (using the unit circle)
-		this.x += Math.sin(Math.toRadians(this.angle)) * this.speed;
-		this.y += Math.cos(Math.toRadians(this.angle)) * this.speed;
+		this.x -= Math.sin(Math.toRadians(this.angle)) * this.speed;
+		this.y -= Math.cos(Math.toRadians(this.angle)) * this.speed;
 		
 	}
 	
