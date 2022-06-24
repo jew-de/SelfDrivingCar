@@ -45,7 +45,7 @@ public class Car {
 		
 	}
 	
-	void move() {
+	private void move() {
 		
 		//set the speed according to inputs
 		if(this.forward) {
