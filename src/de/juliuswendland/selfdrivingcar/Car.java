@@ -1,5 +1,6 @@
 package de.juliuswendland.selfdrivingcar;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
@@ -20,7 +21,7 @@ public class Car {
 	private static final int MAXIMUM_SPEED = 3;
 	private static final double FRICTION = 0.05;
 
-	public Car(int startingX, int startingY, int width, int height) {
+	public Car(double startingX, double startingY, int width, int height) {
 		
 		this.x = startingX;
 		this.y = startingY;
@@ -96,6 +97,7 @@ public class Car {
 	
 	public void draw(Graphics2D graphics2D) {
 		
+		graphics2D.setColor(Color.BLACK);
 		//create a rectangle centered around coordinates
 		Rectangle2D rectangle = new Rectangle2D.Double(
 				- this.width / 2,
