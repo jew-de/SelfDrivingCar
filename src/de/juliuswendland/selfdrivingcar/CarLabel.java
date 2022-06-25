@@ -11,16 +11,20 @@ public class CarLabel extends JLabel {
 
 	private static final long serialVersionUID = 455836144139105696L;
 	private Car car;
+	private Road road;
+	
+	public static final int CAR_LABEL_WIDTH = 200;
 
-	public CarLabel(Car car) {
+	public CarLabel(Car car, Road road) {
 		
-		this.setBounds(150, 0, 200, Frame.SCREENHEIGHT);
+		this.setBounds(150, 0, CarLabel.CAR_LABEL_WIDTH, Frame.SCREENHEIGHT);
 		this.setLayout(null);
 		this.setVisible(true);
 		this.setOpaque(true);
 		this.setBackground(Color.LIGHT_GRAY);
 		this.revalidate();
 		this.car = car;
+		this.road = road;
 		
 	}
 	
@@ -32,7 +36,8 @@ public class CarLabel extends JLabel {
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 		
 		//draw the car
-		car.draw(g2d);
+		this.road.draw(g2d);
+		this.car.draw(g2d);
 		
 		repaint();
 		

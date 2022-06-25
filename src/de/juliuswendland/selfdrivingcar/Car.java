@@ -1,5 +1,6 @@
 package de.juliuswendland.selfdrivingcar;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
@@ -96,6 +97,7 @@ public class Car {
 	
 	public void draw(Graphics2D graphics2D) {
 		
+		graphics2D.setColor(Color.BLACK);
 		//create a rectangle centered around coordinates
 		Rectangle2D rectangle = new Rectangle2D.Double(
 				- this.width / 2,
