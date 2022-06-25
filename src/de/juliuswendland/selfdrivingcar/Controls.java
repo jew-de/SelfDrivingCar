@@ -5,6 +5,9 @@ import java.awt.event.KeyListener;
 
 public class Controls implements KeyListener {
 	
+	boolean forward = false, backward = false;
+	boolean left = false, right = false;
+	
 	private Car car;
 	
 	public Controls(Car car) {
