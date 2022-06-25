@@ -21,7 +21,7 @@ public class Car {
 	private static final int MAXIMUM_SPEED = 3;
 	private static final double FRICTION = 0.05;
 
-	public Car(int startingX, int startingY, int width, int height) {
+	public Car(double startingX, double startingY, int width, int height) {
 		
 		this.x = startingX;
 		this.y = startingY;

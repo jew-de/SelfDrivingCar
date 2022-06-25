@@ -19,7 +19,7 @@ public class Main {
 		
 		Road road = new Road(CarLabel.CAR_LABEL_WIDTH * 0.9, CarLabel.CAR_LABEL_WIDTH / 2, 3);
 		
-		Car car = new Car(50, 150, 30, 50);
+		Car car = new Car(road.getLaneCenter(1), Utils.INFINITY/2 + Frame.SCREENHEIGHT*0.7, 30, 50);
 		car.update();
 		
 		JLabel carLabel = new CarLabel(car, road);

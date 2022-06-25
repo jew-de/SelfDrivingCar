@@ -17,7 +17,7 @@ public class CarLabel extends JLabel {
 
 	public CarLabel(Car car, Road road) {
 		
-		this.setBounds(150, 0, CarLabel.CAR_LABEL_WIDTH, Frame.SCREENHEIGHT);
+		this.setBounds(150, -Utils.INFINITY/2, CarLabel.CAR_LABEL_WIDTH, Utils.INFINITY);
 		this.setLayout(null);
 		this.setVisible(true);
 		this.setOpaque(true);
@@ -38,6 +38,8 @@ public class CarLabel extends JLabel {
 		//draw the car
 		this.road.draw(g2d);
 		this.car.draw(g2d);
+		
+		this.setLocation(150, (int) ((int) -this.car.y + Frame.SCREENHEIGHT * 0.7));
 		
 		repaint();
 		
