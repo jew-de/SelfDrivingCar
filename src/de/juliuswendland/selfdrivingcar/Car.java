@@ -31,9 +31,11 @@ public class Car {
 		Controls controls = new Controls(this);
 		Main.frame.addKeyListener(controls);
 		
+		update();
+		
 	}
 	
-	public void update() {
+	private void update() {
 		
 		Timer updateTimer = new Timer();
 		updateTimer.scheduleAtFixedRate(new TimerTask() {
