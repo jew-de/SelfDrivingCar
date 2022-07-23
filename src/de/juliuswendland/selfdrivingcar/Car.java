@@ -20,6 +20,8 @@ public class Car {
 	private static final double ACCELERATION = 0.2;
 	private static final int MAXIMUM_SPEED = 3;
 	private static final double FRICTION = 0.05;
+	
+	public Sensor sensor;
 
 	public Car(double startingX, double startingY, int width, int height) {
 		
@@ -30,6 +32,8 @@ public class Car {
 		
 		Controls controls = new Controls(this);
 		Main.frame.addKeyListener(controls);
+		
+		this.sensor = new Sensor(this, 3, 100);
 		
 		update();
 		
@@ -43,6 +47,7 @@ public class Car {
 			@Override
 			public void run() {
 				move();
+				sensor.update();
 			}
 		}, 0, 15);
 		
@@ -116,6 +121,8 @@ public class Car {
 		//draw the car
 		Shape rotatedRectangle = transform.createTransformedShape(rectangle);
 		graphics2D.fill(rotatedRectangle);
+		
+		
 		
 //		g.fillRect(
 //			(int) this.x - this.width / 2,

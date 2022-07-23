@@ -16,6 +16,12 @@ public class Road {
 	int top = - Utils.INFINITY;
 	int bottom = Utils.INFINITY;
 	
+	/**
+	 * 
+	 * @param width		the width of the road
+	 * @param x			the x-coordinate the road is based on
+	 * @param laneCount	the number of lanes within the road
+	 */
 	public Road(double width, double x, int laneCount) {
 		
 		this.width = width;
@@ -35,7 +41,7 @@ public class Road {
 	public double getLaneCenter(int laneIndex) {
 		
 		double laneWidth = this.width / this.laneCount;
-		double laneCenter = this.left + laneWidth / 2 + laneIndex * laneWidth;
+		double laneCenter = this.left + laneWidth / 2 + Math.min(laneIndex, this.laneCount - 1) * laneWidth;
 		
 		return laneCenter;
 		
